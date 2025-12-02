@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
-  res.send(`<h1>Your  name is:</h1><h2>${Name}✌️</h2>`);
+  res.send(`<h1>You</h1>`);
 });
 
 app.listen(port, () => {
