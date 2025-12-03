@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import morgan from "morgan";
+import path from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -12,17 +13,10 @@ var Name = "";
 app.use(morgan("combined"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
-function NameGenerator(req, res, next) {
-  console.log(req.body);
-  Name = req.body["first"] + req.body["pet"];
-  next();
-}
-
-app.use(NameGenerator);
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.post("/submit", (req, res) => {
