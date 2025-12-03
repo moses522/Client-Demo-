@@ -4,17 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/index.css" />
-    <script href="index.js"></script>
+    <script src="/client.js"></script>
     <title>Facebook</title>
   </head>
   <body>
     <h1>Facebook Login</h1>
-    <form action="">
-      <label for="first">First Name:</label>
-      <input type="text" name="first" required /><br />
-      <label for="pet"> Pet Name: </label>
-      <input type="text" name="pet" required />
-      <input type="submit" value="Submit" />
+
+    <form>
+      <label for="name">First Name:</label>
+      <input id="name" type="text" name="name" required /><br />
+
+      <label for="lastname">Last Name:</label>
+      <input id="lastname" type="text" name="last_name" required />
+
+      <input id="btn" type="submit" value="Submit" />
     </form>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </body>
 </html>
