@@ -9,11 +9,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const port = 3000;
-var Name = "";
-app.use(morgan("combined"));
+express().use(morgan("combined"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(bodyParser.urlencoded({ extended: true }));
+<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, "public")));
+=======
+>>>>>>> d3f751c9313aec78823d3e9096a8e38d43571ff1
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
